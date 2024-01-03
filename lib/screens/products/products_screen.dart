@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nv_stock_app/constants.dart';
+import 'package:nv_stock_app/screens/products/tabs/accessories_tabs.dart';
 import 'package:nv_stock_app/screens/products/tabs/clothes_tabs.dart';
 
 class ProductsScreen extends StatefulWidget {
@@ -59,8 +60,8 @@ class _ProductsScreenState extends State<ProductsScreen> with SingleTickerProvid
             ClothesTabs(tabName: "Moda feminina"),
             ClothesTabs(tabName: "Gravatas"),
             ClothesTabs(tabName: "Sapatos"),
-            ClothesTabs(tabName: "Cintos"),
-            ClothesTabs(tabName: "Carteiras")
+            AccessoriesTabs(tabName: "Cintos"),
+            AccessoriesTabs(tabName: "Carteiras")
           ],
         ),
       ),
