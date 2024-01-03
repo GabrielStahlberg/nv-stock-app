@@ -15,7 +15,7 @@ class _ClothesScreenState extends State<ClothesScreen> with SingleTickerProvider
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 8, vsync: this);
   }
 
   @override
@@ -29,27 +29,38 @@ class _ClothesScreenState extends State<ClothesScreen> with SingleTickerProvider
     final widthSize = MediaQuery.of(context).size.width;
 
     return DefaultTabController(
-      length: 3,
+      length: 8,
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: kPrimaryColor,
           flexibleSpace: TabBar(
+            isScrollable: true,
             indicatorWeight: 5,
             indicatorColor: kSecondColor,
             controller: _tabController,
             tabs: [
-              Tab(child: Text("Camisas", style: TextStyle(color: Colors.white, fontSize: widthSize * 0.045))),
+              Tab(child: Text("Camisas socais", style: TextStyle(color: Colors.white, fontSize: widthSize * 0.045))),
               Tab(child: Text("Camisetas", style: TextStyle(color: Colors.white, fontSize: widthSize * 0.045))),
-              Tab(child: Text("Sapatos", style: TextStyle(color: Colors.white, fontSize: widthSize * 0.045)))
+              Tab(child: Text("Costumes", style: TextStyle(color: Colors.white, fontSize: widthSize * 0.045))),
+              Tab(child: Text("Moda feminina", style: TextStyle(color: Colors.white, fontSize: widthSize * 0.045))),
+              Tab(child: Text("Gravatas", style: TextStyle(color: Colors.white, fontSize: widthSize * 0.045))),
+              Tab(child: Text("Sapatos", style: TextStyle(color: Colors.white, fontSize: widthSize * 0.045))),
+              Tab(child: Text("Cintos", style: TextStyle(color: Colors.white, fontSize: widthSize * 0.045))),
+              Tab(child: Text("Carteiras", style: TextStyle(color: Colors.white, fontSize: widthSize * 0.045))),
             ],
           ),
         ),
         body: TabBarView(
           controller: _tabController,
           children: const <Widget> [
-            ClothesTabs(tabName: "Camisas"),
+            ClothesTabs(tabName: "Camisas socais"),
             ClothesTabs(tabName: "Camisetas"),
-            ClothesTabs(tabName: "Camisetas")
+            ClothesTabs(tabName: "Costumes"),
+            ClothesTabs(tabName: "Moda feminina"),
+            ClothesTabs(tabName: "Gravatas"),
+            ClothesTabs(tabName: "Sapatos"),
+            ClothesTabs(tabName: "Cintos"),
+            ClothesTabs(tabName: "Carteiras")
           ],
         ),
       ),
