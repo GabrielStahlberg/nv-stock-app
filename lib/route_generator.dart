@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nv_stock_app/screens/clothes/add/add_clothes_screen.dart';
 import 'package:nv_stock_app/screens/home/home_screen.dart';
+import 'package:nv_stock_app/screens/products/add/add_clothes_screen.dart';
 
 class RouteGenerator {
   static const String HOME_ROUTE = "/home_screen";

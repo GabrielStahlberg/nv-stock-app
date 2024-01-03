@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:nv_stock_app/constants.dart';
-import 'package:nv_stock_app/screens/clothes/tabs/clothes_tabs.dart';
+import 'package:nv_stock_app/screens/products/tabs/clothes_tabs.dart';
 
-class ClothesScreen extends StatefulWidget {
-  const ClothesScreen({super.key});
+class ProductsScreen extends StatefulWidget {
+  const ProductsScreen({super.key});
 
   @override
-  State<ClothesScreen> createState() => _ClothesScreenState();
+  State<ProductsScreen> createState() => _ProductsScreenState();
 }
 
-class _ClothesScreenState extends State<ClothesScreen> with SingleTickerProviderStateMixin {
+class _ProductsScreenState extends State<ProductsScreen> with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
   @override

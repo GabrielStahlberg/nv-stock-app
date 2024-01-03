@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nv_stock_app/constants.dart';
 import 'package:nv_stock_app/route_generator.dart';
-import 'package:nv_stock_app/screens/clothes/clothes_screen.dart';
 import 'package:nv_stock_app/screens/home/qr_code_action.dart';
+import 'package:nv_stock_app/screens/products/products_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: kPrimaryColor,
         actions: const [QrCodeAction()],
       ),
-      body: const ClothesScreen(),
+      body: const ProductsScreen(),
       floatingActionButton: FloatingActionButton(
         foregroundColor: Colors.white,
         backgroundColor: kSecondColor,
