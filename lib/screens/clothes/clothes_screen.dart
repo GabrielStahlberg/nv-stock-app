@@ -26,6 +26,8 @@ class _ClothesScreenState extends State<ClothesScreen> with SingleTickerProvider
 
   @override
   Widget build(BuildContext context) {
+    final widthSize = MediaQuery.of(context).size.width;
+
     return DefaultTabController(
       length: 3,
       child: Scaffold(
@@ -35,10 +37,10 @@ class _ClothesScreenState extends State<ClothesScreen> with SingleTickerProvider
             indicatorWeight: 5,
             indicatorColor: kSecondColor,
             controller: _tabController,
-            tabs: const [
-              Tab(child: Text("Camisas", style: TextStyle(color: Colors.white))),
-              Tab(child: Text("Camisetas", style: TextStyle(color: Colors.white))),
-              Tab(child: Text("Sapatos", style: TextStyle(color: Colors.white)))
+            tabs: [
+              Tab(child: Text("Camisas", style: TextStyle(color: Colors.white, fontSize: widthSize * 0.045))),
+              Tab(child: Text("Camisetas", style: TextStyle(color: Colors.white, fontSize: widthSize * 0.045))),
+              Tab(child: Text("Sapatos", style: TextStyle(color: Colors.white, fontSize: widthSize * 0.045)))
             ],
           ),
         ),
