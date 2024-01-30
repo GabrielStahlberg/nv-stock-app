@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class QrCodeAction extends StatefulWidget {
   const QrCodeAction({super.key});
 

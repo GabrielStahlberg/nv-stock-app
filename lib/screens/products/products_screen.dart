@@ -17,6 +17,10 @@ class _ProductsScreenState extends State<ProductsScreen> with SingleTickerProvid
   void initState() {
     super.initState();
     _tabController = TabController(length: 8, vsync: this);
+
+    _tabController.addListener(() {
+
+    });
   }
 
   @override
@@ -54,7 +58,7 @@ class _ProductsScreenState extends State<ProductsScreen> with SingleTickerProvid
         body: TabBarView(
           controller: _tabController,
           children: const <Widget> [
-            ClothesTabs(tabName: "Camisas socais"),
+            ClothesTabs(tabName: "Camisas Sociais"),
             ClothesTabs(tabName: "Camisetas"),
             ClothesTabs(tabName: "Costumes"),
             ClothesTabs(tabName: "Moda feminina"),

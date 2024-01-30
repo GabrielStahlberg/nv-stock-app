@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nv_stock_app/constants.dart';
 import 'package:nv_stock_app/route_generator.dart';
 import 'package:nv_stock_app/screens/home/qr_code_action.dart';
+import 'package:nv_stock_app/screens/home/shopping_cart_action.dart';
 import 'package:nv_stock_app/screens/products/products_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -19,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text("Nelson Vestuário", style: TextStyle(color: Colors.white)),
         backgroundColor: kPrimaryColor,
-        actions: const [QrCodeAction()],
+        actions: const [ShoppingCartAction(), QrCodeAction()],
       ),
       body: const ProductsScreen(),
       floatingActionButton: FloatingActionButton(

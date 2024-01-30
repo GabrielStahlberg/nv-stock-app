@@ -3,8 +3,11 @@ import 'dart:io';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_masked_text2/flutter_masked_text2.dart';
+import 'package:get/get.dart';
 import 'package:nv_stock_app/constants.dart';
+import 'package:nv_stock_app/getxcontroller/product_controller.dart';
 import 'package:nv_stock_app/image_helper.dart';
+import 'package:nv_stock_app/models/product.dart';
 import 'package:nv_stock_app/nv_stock_utils.dart';
 import 'package:nv_stock_app/widgets/rounded_button_primary.dart';
 import 'package:nv_stock_app/widgets/rounded_input_field.dart';
@@ -17,6 +20,8 @@ class AddClothesScreen extends StatefulWidget {
 }
 
 class _AddClothesScreenState extends State<AddClothesScreen> {
+  final ProductController _productController = Get.find(tag: "ProductController");
+
   final TextEditingController _descriptionController = TextEditingController();
   final TextEditingController _positionController = TextEditingController();
   final TextEditingController _sizeController = TextEditingController();
@@ -135,9 +140,7 @@ class _AddClothesScreenState extends State<AddClothesScreen> {
                 RoundedButtonPrimary(
                   text: "Adicionar",
                   widthSize: widthSize,
-                  press: () {
-
-                  },
+                  press: () => _addProduct(),
                 ),
               ],
             ),
@@ -145,5 +148,18 @@ class _AddClothesScreenState extends State<AddClothesScreen> {
         ),
       ),
     );
+  }
+
+  _addProduct() {
+    final product = Product(
+      imageUrl: "",
+      description: _descriptionController.text,
+      size: _sizeController.text,
+      position: _positionController.text,
+      price: _priceController.numberValue,
+      category: _categoryController.text
+    );
+
+    _productController.addProduct(product);
   }
 }
